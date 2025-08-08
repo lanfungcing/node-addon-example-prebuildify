@@ -1,0 +1,23 @@
+{
+    "name": "@fqlan/node-addon-example",
+    "version": "0.1.5",
+    "description": "Hello world app packaged with node-gyp-build",
+    "main": "./index.js",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lanfungcing/node-addon-example-prebuildify.git"
+    },
+
+    "dependencies": {
+        "node-gyp-build": "^4.0.0",
+        "nan": "2.x"
+    },
+    "devDependencies": {
+        "prebuildify": "^6.0.1"
+    },
+    "scripts": {
+        "install": "node-gyp-build",
+        "test": "node index.js"
+    }
+}
