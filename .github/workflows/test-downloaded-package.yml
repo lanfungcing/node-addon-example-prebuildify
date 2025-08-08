@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: test downloaded npm package
 
 on:
   workflow_dispatch:
