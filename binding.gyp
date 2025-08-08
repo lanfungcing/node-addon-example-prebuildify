@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "hello",
-      "sources": [ "binding.cpp" ],
+      "sources": [ "hello.cpp" ],
       "include_dirs": [
         "<!(node -e \"require('nan')\")"
       ]
