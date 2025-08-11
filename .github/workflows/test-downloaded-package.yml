@@ -16,5 +16,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
       - run: |
           npm install @fqlan/node-addon-example
+          npm install
           npm test
     
