@@ -1,5 +1,5 @@
 
-name: build, test and release
+name: build and release
 
 on:
   push:
