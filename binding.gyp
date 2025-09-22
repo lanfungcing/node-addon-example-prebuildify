@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "hello",
-      "sources": [ "hello.c" ]
+      "sources": [ "src/hello.c" ]
     }
   ]
 }
