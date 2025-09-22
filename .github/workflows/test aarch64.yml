@@ -29,6 +29,10 @@ jobs:
           ln -s /opt/node-v24.2.0-openharmony-arm64/bin/node /__e/node20/bin/node
       - name: Chekout
         uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
       - run: npm install
       - run: npm test
 
