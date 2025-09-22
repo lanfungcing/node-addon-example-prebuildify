@@ -11,7 +11,7 @@
 
     "dependencies": {
         "node-gyp-build": "^4.0.0",
-        "node-gyp": "^v11.3.0",
+        "node-gyp": "^11.3.0"
     },
     "devDependencies": {
         "prebuildify": "^6.0.1"
