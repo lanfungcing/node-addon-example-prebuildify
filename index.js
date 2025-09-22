@@ -1,4 +1,5 @@
+'use strict'
+
 var binding= require('node-gyp-build')(__dirname);
 
-require('assert').equal(binding.hello(),"hello");
-module.exports=binding.hello;
+module.exports=binding;
