@@ -1,0 +1,37 @@
+
+name: build and release
+
+on:
+  push:
+    tags:
+      "v*.*.*"
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-24.04-arm]
+        arch: [arm64]
+    container:
+      image: ghcr.io/hqzing/docker-openharmony-rootfs:latest
+      volumes:
+        - /tmp/node20-ohos:/__e/node20:rw,rshared
+    steps:
+      - name: Setup node for actions/checkout
+        run: |
+          curl -L -O https://github.com/hqzing/build-ohos-node/releases/download/v24.2.0/node-v24.2.0-openharmony-arm64.tar.gz
+          mkdir -p /opt /__e/node20/bin
+          tar -zxf node-v24.2.0-openharmony-arm64.tar.gz -C /opt
+          ln -s /opt/node-v24.2.0-openharmony-arm64/bin/node /__e/node20/bin/node
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm test
+
+      
