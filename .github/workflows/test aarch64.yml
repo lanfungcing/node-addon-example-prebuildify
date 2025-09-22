@@ -25,7 +25,8 @@ jobs:
         run: |
           curl -L -O https://github.com/hqzing/build-ohos-node/releases/download/v24.2.0/node-v24.2.0-openharmony-arm64.tar.gz
           mkdir -p /opt /__e/node24
-          tar -zxf node-v24.2.0-openharmony-arm64.tar.gz -C /__e/node24
+          tar -zxf node-v24.2.0-openharmony-arm64.tar.gz /opt
+          mv /opt/node-v24.2.0-openharmony-arm64/* -C /__e/node24
       - name: Chekout
         uses: actions/checkout@v5
       - name: setup node
