@@ -25,12 +25,9 @@ jobs:
         run: |
           curl -L -O https://github.com/hqzing/build-ohos-node/releases/download/v24.2.0/node-v24.2.0-openharmony-arm64.tar.gz
           mkdir -p /opt /__e/node24
-          ls /__e/node24
           tar -zxf node-v24.2.0-openharmony-arm64.tar.gz -C /opt
           mv /opt/node-v24.2.0-openharmony-arm64/* /__e/node24
-          export PATH=$PATH:/__e/node24/bin
-          ls /__e/node24
-          echo $PATH
+          echo "/__e/node24/bin" >> $GITHUB_PATH
       - name: Chekout
         uses: actions/checkout@v5
       - run: npm install
