@@ -18,15 +18,13 @@ jobs:
         arch: [arm64]
     container:
       image: ghcr.io/hqzing/docker-openharmony-rootfs:latest
-      volumes:
-        - /tmp/node20-ohos:/__e/node24:rw,rshared
     steps:
       - name: Setup node for actions/checkout
         run: |
+          pwd
           curl -L -O https://github.com/hqzing/build-ohos-node/releases/download/v24.2.0/node-v24.2.0-openharmony-arm64.tar.gz
-          mkdir -p /opt /__e/node24/bin
-          tar -zxf node-v24.2.0-openharmony-arm64.tar.gz -C /opt
-          find /opt/node-v24.2.0-openharmony-arm64/bin -maxdepth 1 -type f -exec ln -s /opt/node-v24.2.0-openharmony-arm64/bin/{} /__e/node24/bin/ \ 
+          mkdir -p /__e/node24
+          tar zxf node-v24.2.0-openharmony-arm64.tar.gz -C /__e/node24
       - uses: actions/checkout@v5
       - run: npm install
       - run: npm test
