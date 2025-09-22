@@ -30,7 +30,11 @@ jobs:
           echo "/__e/node24/bin" >> $GITHUB_PATH
       - name: Chekout
         uses: actions/checkout@v5
-      - run: npm install
-      - run: npm test
+      - run: |
+          echo $PATH
+          npm install
+      - run: |
+          echo $PATH
+          npm test
 
       
