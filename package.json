@@ -1,5 +1,5 @@
 {
-    "name": "@fqlan/node-addon-example",
+    "name": "@fqlan/node-addon-example-prebuildify",
     "version": "0.0.1",
     "description": "Hello world app packaged with node-gyp-build",
     "main": "./index.js",
@@ -18,6 +18,8 @@
     },
     "scripts": {
         "install": "node-gyp-build",
+        "prebuild": "prebuildify --napi --strip --target=22.18.0"
+        "prebuild-darwin-x64+arm64": "prebuildify --arch x64+arm64 --napi --strip --target=22.18.0"
         "test": "node index.js"
     }
 }
