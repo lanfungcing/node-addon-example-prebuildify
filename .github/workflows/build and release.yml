@@ -93,6 +93,16 @@ jobs:
         with:
           files: ${{ steps.get_version.outputs.version }}-*.tar
           token: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    needs: build
+    permissions:
+      contents: write 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v5
+        with:
+          path: prebuilds
       - name: Publish
         run: |
           npm config set provenance true
