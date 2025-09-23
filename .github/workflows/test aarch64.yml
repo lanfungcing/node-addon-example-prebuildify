@@ -3,8 +3,8 @@ name: test aarch64
 
 on:
   push:
-    tags:
-      "v*.*.*"
+    #tags:
+      #"v*.*.*"
     #branches:
       #- main
   workflow_dispatch:
