@@ -1,6 +1,6 @@
 {
     "name": "@fqlan/node-addon-example-prebuildify",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Hello world app packaged with node-gyp-build",
     "main": "./index.js",
     "author": "",
