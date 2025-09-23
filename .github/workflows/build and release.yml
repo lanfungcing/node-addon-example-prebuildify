@@ -93,5 +93,10 @@ jobs:
         with:
           files: ${{ steps.get_version.outputs.version }}-*.tar
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+      - name: Publish
+        run: |
+          npm config set provenance true
+          echo "//registry.npmjs.org/:_authToken=$secrets.NPM_TOKEN" >> ~/.npmrc
+          npm publish --access public
+    
       
