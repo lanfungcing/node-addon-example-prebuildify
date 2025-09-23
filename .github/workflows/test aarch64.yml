@@ -2,7 +2,7 @@
 name: test aarch64
 
 on:
-  push:
+  #push:
     #tags:
       #"v*.*.*"
     #branches:
